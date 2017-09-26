@@ -1,0 +1,104 @@
+body { 
+    margin: 0; 
+    padding: 0; 
+}
+
+div {
+    display: flex;
+}
+
+.app {
+    color: rgba(0, 0, 0, 0.87);
+    height: 100vh;
+    flex-direction: column;
+    user-select: none;
+}
+
+.header {
+    font-size: large;
+    justify-content: center;
+    align-items: center;
+    height: 6.66vh;
+    background-color: pink;
+}
+
+.footer {
+    justify-content: center;
+    align-items: center;
+    height: 6.66vh;
+    background-color: gray;
+    font-size: small;
+}
+
+.body {
+    flex-direction: row;
+    height: 86.66vh;
+}
+
+.left {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-color: red;
+}
+
+.right {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-color: blue;
+}
+
+.center {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 960px;
+    background-color: green;
+}
+
+.button {
+    justify-content: center;
+    align-items: center;
+    background: white;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    font-size: medium;
+    border: 1px groove black;
+}
+
+.label {
+    background: #9E6E48;
+    border: 1px groove black;
+    padding: 3px;
+    margin: 4px;
+}
+
+.headerOutput {
+    background: #D3A886;
+    border: 1px groove black;
+    padding: 3px;
+    margin: 4px;
+}
+
+#total {
+    background: #EDDDD0;
+    border: 1px groove black;
+    padding: 3px;
+    margin: 4px;
+}
+
+#reset {
+    background: #B8B0B0;
+}
+
+#multiplier {
+    background: gray;
+}
+
+#autoclicker {
+    background: gray;
+}
