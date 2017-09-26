@@ -1,6 +1,8 @@
 $(document).ready(function() {
     const multiplierCost = 10
     const autoclickerCost = 100
+    const expirationDate = 100000000
+
     let autoclickerInterval = 1000
     let multiplier = 1.2
 
@@ -107,11 +109,13 @@ $(document).ready(function() {
 
     let updateCookies = () => {
         $("#reset").css("background", "#D3A886")
-        Cookies.set("total", total, { expires : 10, path : './cookies' })
-        Cookies.set("incrementer", incrementer, { expires : 10, path : './cookies' })
-        Cookies.set("incrementerCount", incrementerCount, { expires : 10, path : './cookies' })
-        Cookies.set("multiplierCount", multiplierCount, { expires : 10, path : './cookies' })
-        Cookies.set("autoclickerCount", autoclickerCount, { expires : 10, path : './cookies' })
+        Cookies.set("total", total, { expires : expirationDate, path : './cookies' })
+        Cookies.set("incrementer", incrementer, { expires : expirationDate, path : './cookies' })
+        Cookies.set("incrementerCount", incrementerCount, { expires : expirationDate, path : './cookies' })
+        Cookies.set("multiplierCount", multiplierCount, { expires : expirationDate, path : './cookies' })
+        Cookies.set("autoclickerCount", autoclickerCount, { expires : expirationDate, path : './cookies' })
+        Cookies.set("multiplier", multiplier, { expires : expirationDate, path : './cookies' })
+        Cookies.set("autoclickerInterval", autoclickerInterval, { expires : expirationDate, path : './cookies' })
     }
 
     let retrieveCookies = () => {
@@ -121,15 +125,23 @@ $(document).ready(function() {
             incrementerCount = parseInt(Cookies.get("incrementerCount"))
             multiplierCount = parseInt(Cookies.get("multiplierCount"))
             autoclickerCount = parseInt(Cookies.get("autoclickerCount"))
+            multiplier = parseFloat(Cookies.get("multiplier"))
+            autoclickerInterval = parseInt(Cookies.get("autoclickerInterval"))
 
             numSizeOverflowCheck()
             setAllLabels()
 
             for(let i = 0; i < autoclickerCount; i++) {
-                setInterval(incrementerClicked, autoclickerInterval);
+                autoclickerIds.push(setInterval(incrementerClicked, autoclickerInterval))
             }
 
             enableButtons()
+
+            if(total === 0) {
+                $("#reset").css("background", "#B8B0B0")
+            } else {
+                $("#reset").css("background", "#D3A886")
+            }
         } else {
             updateCookies()
         }
@@ -150,6 +162,7 @@ $(document).ready(function() {
             incrementerCount = 0
             multiplierCount = 0
             autoclickerCount = 0
+            autoclickerIds = []
 
             setAllLabels()
             updateCookies()
@@ -170,5 +183,4 @@ $(document).ready(function() {
     }
     
     retrieveCookies()
-    $("#reset").css("background", "#B8B0B0")
 })
