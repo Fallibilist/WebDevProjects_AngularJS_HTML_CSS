@@ -12,11 +12,12 @@ div {
     height: 100vh;
     flex-direction: column;
     user-select: none;
+    cursor: default;
 }
 
 .header {
     font-size: large;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 6.66vh;
     background-color: pink;
@@ -68,6 +69,7 @@ div {
     border-radius: 50%;
     font-size: medium;
     border: 1px groove black;
+    cursor: cell;
 }
 
 .label {
@@ -75,6 +77,11 @@ div {
     border: 1px groove black;
     padding: 3px;
     margin: 4px;
+}
+
+.headerSpacers {
+    justify-content: center;
+    width: 33vw;
 }
 
 .headerOutput {
@@ -93,12 +100,19 @@ div {
 
 #reset {
     background: #B8B0B0;
+    cursor: not-allowed;
+}
+
+#cheat {
+    cursor: url(cheat.gif), pointer;
 }
 
 #multiplier {
     background: gray;
+    cursor: not-allowed;
 }
 
 #autoclicker {
     background: gray;
+    cursor: not-allowed;
 }

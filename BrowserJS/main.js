@@ -59,7 +59,7 @@ $(document).ready(function() {
             
             refreshTotal()
             disableButtons()
-            autoclickerIds.push(setInterval(incrementerClicked, autoclickerInterval))
+            addInterval()
             
             $("#autoclickerCountLabel").text('Autoclickers: ' + ++autoclickerCount)
 
@@ -72,18 +72,22 @@ $(document).ready(function() {
     let disableButtons = () => {
         if(total < multiplierCost) {
             $("#multiplier").css('background', 'gray')
+            $("#multiplier").css('cursor', 'not-allowed')
         }
 
         if(total < autoclickerCost) {
             $("#autoclicker").css('background', 'gray')
+            $("#autoclicker").css('cursor', 'not-allowed')
         }
     }
 
     let enableButtons = () => {
         if(total >= multiplierCost) {
             $("#multiplier").css('background', 'white')
+            $("#multiplier").css('cursor', 'cell')
             if(total >= autoclickerCost) {
                 $("#autoclicker").css('background', 'white')
+                $("#autoclicker").css('cursor', 'cell')
             }
         }
     }
@@ -109,6 +113,7 @@ $(document).ready(function() {
 
     let updateCookies = () => {
         $("#reset").css("background", "#D3A886")
+        $("#reset").css('cursor', 'pointer')
         Cookies.set("total", total, { expires : expirationDate, path : './cookies' })
         Cookies.set("incrementer", incrementer, { expires : expirationDate, path : './cookies' })
         Cookies.set("incrementerCount", incrementerCount, { expires : expirationDate, path : './cookies' })
@@ -119,7 +124,7 @@ $(document).ready(function() {
     }
 
     let retrieveCookies = () => {
-        if(typeof Cookies.get("total") !== 'undefined') {
+        if(Cookies.get("total")) {
             total = parseFloat(Cookies.get("total"))
             incrementer = parseFloat(Cookies.get("incrementer"))
             incrementerCount = parseInt(Cookies.get("incrementerCount"))
@@ -132,15 +137,17 @@ $(document).ready(function() {
             setAllLabels()
 
             for(let i = 0; i < autoclickerCount; i++) {
-                autoclickerIds.push(setInterval(incrementerClicked, autoclickerInterval))
+                addInterval()
             }
 
             enableButtons()
 
             if(total === 0) {
                 $("#reset").css("background", "#B8B0B0")
+                $("#reset").css('cursor', 'not-allowed')
             } else {
                 $("#reset").css("background", "#D3A886")
+                $("#reset").css('cursor', 'pointer')
             }
         } else {
             updateCookies()
@@ -169,6 +176,7 @@ $(document).ready(function() {
             disableButtons() 
             numSizeOverflowCheck()
             $("#reset").css("background", "#B8B0B0")
+            $("#reset").css('cursor', 'not-allowed')
         }
     }
 
@@ -182,5 +190,7 @@ $(document).ready(function() {
         enableButtons()
     }
     
+    const addInterval = () => autoclickerIds.push(setInterval(incrementerClicked, autoclickerInterval))
+
     retrieveCookies()
 })
