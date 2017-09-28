@@ -1,0 +1,118 @@
+div {
+    display: flex;
+}
+
+.app {
+    margin: 0; 
+    padding: 0; 
+    color: rgba(0, 0, 0, 0.87);
+    height: 100vh;
+    flex-direction: column;
+    user-select: none;
+    cursor: default;
+}
+
+.heading {
+    font-size: large;
+    justify-content: space-around;
+    align-items: center;
+    height: 6.66vh;
+    background-color: pink;
+}
+
+.footing {
+    justify-content: center;
+    align-items: center;
+    height: 6.66vh;
+    background-color: gray;
+    font-size: small;
+}
+
+.midsection {
+    flex-direction: row;
+    height: 86.66vh;
+}
+
+.left {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-color: red;
+    height: 100%;
+}
+
+.right {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-color: blue;
+    height: 100%;
+}
+
+.center {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 960px;
+    background-color: green;
+    height: 100%;
+}
+
+.button {
+    justify-content: center;
+    align-items: center;
+    background: white;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    font-size: medium;
+    border: 1px groove black;
+    cursor: cell;
+}
+
+.label {
+    background: #9E6E48;
+    border: 1px groove black;
+    padding: 3px;
+    margin: 4px;
+}
+
+.headingSpacers {
+    justify-content: center;
+    width: 33vw;
+}
+
+.headingOutput {
+    background: #D3A886;
+    border: 1px groove black;
+    padding: 3px;
+    margin: 4px;
+    border-radius: 6px;
+}
+
+#total {
+    background: #EDDDD0;
+    padding: 3px;
+    margin: 4px;
+}
+
+#reset {
+    background: #B8B0B0;
+    cursor: not-allowed;
+}
+
+#cheat {
+    cursor: url(cheat.gif), pointer;
+}
+
+#multiplier {
+    background: gray;
+    cursor: not-allowed;
+}
+
+#autoclicker {
+    background: gray;
+    cursor: not-allowed;
+}

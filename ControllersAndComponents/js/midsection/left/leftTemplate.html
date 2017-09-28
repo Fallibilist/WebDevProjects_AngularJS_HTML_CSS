@@ -1,0 +1,16 @@
+<div class="left">
+    <div class="label" id="multiplierCountLabel">
+        Times Clicked: {{ $ctrl.trackingService.multiplierCount }}
+    </div>
+    <div class="button" id="multiplier" ng-style="{ 
+                                                    'background-color': $ctrl.trackingService.multiplierColor, 
+                                                    cursor: $ctrl.trackingService.multiplierCursor,
+                                                    height: $ctrl.trackingService.buttonSize,
+                                                    width: $ctrl.trackingService.buttonSize
+                                                  }" ng-click="$ctrl.multiply()">
+        *{{ $ctrl.trackingService.multiplier | number : 2 }}
+    </div>
+    <div class="label" id="multiplierCostLabel">
+        Cost: {{ $ctrl.trackingService.multiplierCost | number : 2 }}
+    </div>
+</div>

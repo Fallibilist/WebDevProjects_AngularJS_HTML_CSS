@@ -1,0 +1,17 @@
+<div class="heading">
+    <div class="headingSpacers" id="resetSpacer">
+        <div class="headingOutput" id="reset"  ng-style="{ 'background-color': $ctrl.trackingService.resetColor, cursor: $ctrl.trackingService.resetCursor }" ng-click="$ctrl.reset()">
+            Reset
+        </div>
+    </div>
+    <div class="headingSpacers" id="totalSpacer">
+        <div class="headingOutput" id="total">
+            Total: {{ $ctrl.trackingService.total | number : 2 }}
+        </div>
+    </div>
+    <div class="headingSpacers" id="cheatSpacer">
+        <div class="headingOutput" id="cheat" ng-click="$ctrl.cheat()">
+            Cheat
+        </div>
+    </div>
+</div>

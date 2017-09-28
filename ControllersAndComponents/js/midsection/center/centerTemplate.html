@@ -1,0 +1,14 @@
+<div class="center">
+    <div class="label" id="incrementerCountLabel">
+        Times Clicked: {{ $ctrl.trackingService.incrementerCount }}
+    </div>
+    <div class="button" id="incrementer" ng-style="{
+                                                        height: $ctrl.trackingService.buttonSize,
+                                                        width: $ctrl.trackingService.buttonSize
+                                                   }" ng-click="$ctrl.increment()">
+        +{{ $ctrl.trackingService.incrementer | number : 2 }}
+    </div>
+    <div class="label" id="incrementerCostLabel">
+        Cost: Free!
+    </div>
+</div>

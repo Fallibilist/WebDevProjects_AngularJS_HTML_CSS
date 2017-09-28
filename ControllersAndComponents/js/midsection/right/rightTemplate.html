@@ -1,0 +1,16 @@
+<div class="right">
+    <div class="label" id="autoclickerCountLabel">
+        Autoclickers: {{ $ctrl.trackingService.autoclickerCount }}
+    </div>
+    <div class="button" id="autoclicker" ng-style="{ 
+                                                        'background-color': $ctrl.trackingService.autoclickerColor, 
+                                                        cursor: $ctrl.trackingService.autoclickerCursor,
+                                                        height: $ctrl.trackingService.buttonSize,
+                                                        width: $ctrl.trackingService.buttonSize
+                                                   }" ng-click="$ctrl.autoclick()">
+        +1
+    </div>
+    <div class="label" id="autoclickerCostLabel">
+        Cost: {{ $ctrl.trackingService.autoclickerCost | number : 2 }}
+    </div>
+</div>
