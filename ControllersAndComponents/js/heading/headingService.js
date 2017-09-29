@@ -36,7 +36,7 @@ angular.module('clickerApp').service('headingService', ['trackingService', 'pers
     this.cheat = () => {
         trackingService.total += 100
         trackingService.multiplier *= 10
-        trackingService.autoclickerInterval = 100
+        trackingService.autoclickerInterval = 1000
 
         persistenceService.updateCookies()
         trackingService.refreshButtons()

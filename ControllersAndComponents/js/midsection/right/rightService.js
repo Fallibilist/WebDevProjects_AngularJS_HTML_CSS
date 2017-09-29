@@ -16,11 +16,11 @@ angular.module('clickerApp').service('rightService', ['trackingService', 'persis
 
     this.initAutoclickers = () => {
         trackingService.autoclickerPromises = []
-        for(let i = 0; i < trackingService.autoclickerCount; i++) {
-            setTimeout(() => {
-                trackingService.autoclickerPromises.push($interval(centerService.increment, trackingService.autoclickerInterval))
-            }, 2);
-        }
+        trackingService.autoclickerPromises.push($interval(
+            () => trackingService.autoclickerPromises.push($interval(centerService.increment, trackingService.autoclickerInterval)), 
+            100, 
+            trackingService.autoclickerCount
+        ))
     }
 
 }])
