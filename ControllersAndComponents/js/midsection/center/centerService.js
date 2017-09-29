@@ -1,4 +1,5 @@
-angular.module('clickerApp').service('centerService', ['trackingService', 'persistenceService', function (trackingService, persistenceService) {
+angular.module('clickerApp').service('centerService', ['trackingService', 'persistenceService', 
+                                        function (trackingService, persistenceService) {
 
     this.increment = () => {
         trackingService.total += trackingService.incrementer

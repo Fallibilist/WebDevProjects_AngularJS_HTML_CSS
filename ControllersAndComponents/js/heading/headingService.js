@@ -1,5 +1,5 @@
-angular.module('clickerApp').service('headingService', ['trackingService', 'persistenceService', '$interval', function (trackingService, persistenceService, $interval) {
-
+angular.module('clickerApp').service('headingService', ['trackingService', 'persistenceService', '$interval', 
+                                        function (trackingService, persistenceService, $interval) {
 
     this.reset = () => {
         if(trackingService.stateChanged) {
@@ -41,4 +41,5 @@ angular.module('clickerApp').service('headingService', ['trackingService', 'pers
         persistenceService.updateCookies()
         trackingService.refreshButtons()
     }
+    
 }])

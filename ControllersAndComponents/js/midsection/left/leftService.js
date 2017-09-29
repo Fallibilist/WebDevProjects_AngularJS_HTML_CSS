@@ -1,4 +1,5 @@
-angular.module('clickerApp').service('leftService', ['trackingService', 'persistenceService', function (trackingService, persistenceService) {
+angular.module('clickerApp').service('leftService', ['trackingService', 'persistenceService', 
+                                        function (trackingService, persistenceService) {
 
     this.multiply = () => {
         if (trackingService.total >= trackingService.multiplierCost) {

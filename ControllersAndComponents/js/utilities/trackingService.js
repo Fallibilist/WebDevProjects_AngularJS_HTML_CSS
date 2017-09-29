@@ -1,5 +1,6 @@
 angular.module('clickerApp').service('trackingService', [function () {
 
+    this.stateChanged = false;
     this.winner = false
 
     this.multiplierCost = 10
@@ -17,30 +18,28 @@ angular.module('clickerApp').service('trackingService', [function () {
     this.autoclickerCount = 0
 
     this.autoclickerPromises = []
+    
+    this.resetColor = '#B8B0B0'
+    this.resetCursor = 'not-allowed'
+    
+    this.cheatColor = '#B8B0B0'
+    this.cheatCursor = 'not-allowed'
+    
+    this.autoclickerCursor = 'not-allowed'
+    this.autoclickerColor = 'gray'
 
-    this.stateChanged = false;
+    this.multiplierColor = 'gray'
+    this.multiplierCursor = 'not-allowed'
     
-    this.resetColor = "#B8B0B0"
-    this.resetCursor = "not-allowed"
-    
-    this.cheatColor = "#B8B0B0"
-    this.cheatCursor = "not-allowed"
-    
-    this.autoclickerCursor = "not-allowed"
-    this.autoclickerColor = "gray"
-
-    this.multiplierColor = "gray"
-    this.multiplierCursor = "not-allowed"
-    
-    this.buttonSize = "150px"
+    this.buttonSize = '150px'
 
     this.refreshButtons = () => {
         if(this.stateChanged) {
-            this.resetColor = "#D3A886"
-            this.resetCursor = "pointer"
+            this.resetColor = '#D3A886'
+            this.resetCursor = 'pointer'
         } else {
-            this.resetColor = "#B8B0B0"
-            this.resetCursor = "not-allowed"
+            this.resetColor = '#B8B0B0'
+            this.resetCursor = 'not-allowed'
         }
 
         if(this.total >= this.multiplierCost) {
@@ -73,8 +72,9 @@ angular.module('clickerApp').service('trackingService', [function () {
 
     this.winConditionCheck = () => {
         if(!Number.isFinite(this.total) && !this.winner) {
-            alert("You Win!")
+            alert('You Win!')
             this.winner = true
         }
     }
+    
 }])

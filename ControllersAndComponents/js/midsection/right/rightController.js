@@ -1,4 +1,5 @@
-angular.module('clickerApp').controller('rightController', ['trackingService', 'rightService', function (trackingService, rightService) {
+angular.module('clickerApp').controller('rightController', ['trackingService', 'rightService', 
+                                            function (trackingService, rightService) {
 
     this.trackingService = trackingService
     this.rightService = rightService
